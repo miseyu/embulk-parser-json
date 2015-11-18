@@ -3,13 +3,12 @@ lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
-  spec.name          = "embulk-parser-json"
-  spec.version       = "0.0.1"
-  spec.authors       = ["Takuma kanari"]
-  spec.email         = ["chemtrails.t@gmail.com"]
+  spec.name          = "embulk-parser-jsonv2"
+  spec.version       = "0.0.2"
+  spec.authors       = ["Yuji Mise"]
+  spec.email         = ["miseyu2000@gmail.com"]
   spec.summary       = %q{Embulk parser plugin for json}
   spec.description   = %q{Json parser plugin is Embulk plugin to fetch entries in json format.}
-  spec.homepage      = "https://github.com/takumakanari/embulk-parser-json"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

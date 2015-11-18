@@ -3,8 +3,8 @@ require "jsonpath"
 module Embulk
   module Parser
 
-    class JsonParserPlugin < ParserPlugin
-      Plugin.register_parser("json", self)
+    class Jsonv2ParserPlugin < ParserPlugin
+      Plugin.register_parser("jsonv2", self)
 
       def self.transaction(config, &control)
         task = {
@@ -40,7 +40,7 @@ module Embulk
           type = c["type"]
           case type
             when "string"
-              v
+              if v.nil? then nil else v.to_s end
             when "long"
               v.to_i
             when "double"
