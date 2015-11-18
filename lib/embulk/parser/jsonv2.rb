@@ -1,3 +1,4 @@
+require 'json'
 require "jsonpath"
 
 module Embulk
@@ -40,7 +41,11 @@ module Embulk
           type = c["type"]
           case type
             when "string"
-              if v.nil? then nil else v.to_s end
+              if v.nil?
+                nil
+              else
+                if v.kind_of?(Hash) then JSON.generate(v) else v.to_s end
+              end
             when "long"
               v.to_i
             when "double"
